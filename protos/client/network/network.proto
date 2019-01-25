@@ -1,0 +1,8 @@
+/*
+ * This proto defines the contract for communication between client and server.
+ * TODO: Create some requests.
+ */
+
+syntax = "proto3";
+
+package network;

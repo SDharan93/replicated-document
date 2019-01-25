@@ -1,0 +1,25 @@
+/*
+ * This proto defines the contract for representing the character data in the document.
+ */
+
+syntax = "proto3";
+
+package document.data;
+
+// A representation of the characters stored within the collaborative document.
+message ReplicaCharacter {
+    // The value of a single character. Example: "A".
+    string value = 1;
+    // The operation number for the user. The vector clock represents the causality of the user's actions.
+    int32 vector_clock = 2;
+    // The relative position of the character within the document compared to other ReplicaCharacters.
+    repeated PositionIdentifier positions = 3;
+}
+
+// Represent relative positioning when attempting to guarantee causality.
+message PositionIdentifier {
+    // The unique identifier for the user who made the change.
+    int32 site_id = 1;
+    // The value that represent the position relative to the other data points.
+    int32 digit = 2;
+}
