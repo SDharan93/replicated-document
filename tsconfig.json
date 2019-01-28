@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "noImplicitAny": true,
+      "target": "es6",
+      "sourceMap": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "outDir": "dist/"
+  },
+  "include": [
+      "src/**/*"
+  ],
+  "exclude": [
+      "./node_modules"
+  ]
+}

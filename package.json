@@ -1,0 +1,11 @@
+{
+  "name": "replicated-document",
+  "version": "1.0.0",
+  "dependencies": {
+    "protobufjs": "^6.8.8"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  }
+}
