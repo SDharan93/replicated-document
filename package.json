@@ -9,10 +9,11 @@
     "typescript": "^3.2.4"
   },
   "scripts": {
-    "build": "npm run build-proto && npm run build-ts",
+    "build": "npm run build-proto && npm run build-ts && npm run tslint",
     "build-client-proto": "pbjs -t static-module ./protos/client/**/*.proto -o ./src/lib-proto/client.js && pbts -o ./src/lib-proto/client.d.ts ./src/lib-proto/client.js",
     "build-document-proto": "pbjs -t static-module ./protos/document/**/*.proto -o ./src/lib-proto/document.js && pbts -o ./src/lib-proto/document.d.ts ./src/lib-proto/document.js",
     "build-proto": "mkdir -p ./src/lib-proto && npm run build-client-proto && npm run build-document-proto",
-    "build-ts": "tsc"
+    "build-ts": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   }
 }
