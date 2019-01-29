@@ -2,10 +2,17 @@
   "name": "replicated-document",
   "version": "1.0.0",
   "dependencies": {
-    "protobufjs": "^6.8.8"
   },
   "devDependencies": {
+    "protobufjs": "^6.8.8",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"
+  },
+  "scripts": {
+    "build": "npm run build-proto && npm run build-ts",
+    "build-client-proto": "pbjs -t static-module ./protos/client/**/*.proto -o ./src/lib-proto/client.js && pbts -o ./src/lib-proto/client.d.ts ./src/lib-proto/client.js",
+    "build-document-proto": "pbjs -t static-module ./protos/document/**/*.proto -o ./src/lib-proto/document.js && pbts -o ./src/lib-proto/document.d.ts ./src/lib-proto/document.js",
+    "build-proto": "mkdir -p ./src/lib-proto && npm run build-client-proto && npm run build-document-proto",
+    "build-ts": "tsc"
   }
 }

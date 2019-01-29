@@ -21,4 +21,5 @@ node_modules/
 .npm
 
 # Compiled Code
-bin/
+dist/
+src/lib-proto/

@@ -8,3 +8,7 @@ syntax = "proto3";
 import "document/data/document_data.proto";
 
 package network;
+
+message Example {
+    int32 id = 1;
+}
