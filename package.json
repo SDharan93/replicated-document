@@ -1,8 +1,7 @@
 {
   "name": "replicated-document",
   "version": "1.0.0",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "protobufjs": "^6.8.8",
     "tslint": "^5.12.1",
