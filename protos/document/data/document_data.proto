@@ -6,6 +6,20 @@ syntax = "proto3";
 
 package document.data;
 
+// A representation of a document.
+message Document {
+    // A unique identifier for the document.
+    string document_id = 1;
+    // A representation of all lines within the document.
+    repeated DocumentLine line= 2;
+}
+
+// A representation of a line in a document.
+message DocumentLine {
+    // All characters within the line.
+    repeated ReplicaCharacter character = 1;
+}
+
 // A representation of the characters stored within the collaborative document.
 message ReplicaCharacter {
     // The value of a single character. Example: "A".
@@ -19,7 +33,7 @@ message ReplicaCharacter {
 // Represent relative positioning when attempting to guarantee causality.
 message PositionIdentifier {
     // The unique identifier for the user who made the change.
-    int32 site_id = 1;
+    string site_id = 1;
     // The value that represent the position relative to the other data points.
     int32 digit = 2;
 }
