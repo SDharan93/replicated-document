@@ -3,23 +3,23 @@ import { document } from "../lib-proto/document";
 import PositionIdentifier = document.data.PositionIdentifier;
 
 class PositionIdentifierWrapper extends ProtoWrapper<PositionIdentifier> {
-    private proto: PositionIdentifier;
+    private _proto: PositionIdentifier;
 
     public constructor(proto: PositionIdentifier) {
         super();
-        this.proto = proto;
+        this._proto = proto;
     }
 
-    public getProto(): document.data.PositionIdentifier {
-        return this.proto;
+    public get proto(): document.data.PositionIdentifier {
+        return this._proto;
     }
 
-    public getSiteId(): string {
-        return this.proto.siteId;
+    public get siteId(): string {
+        return this._proto.siteId;
     }
 
-    public getDigit(): number {
-        return this.proto.digit;
+    public get digit(): number {
+        return this._proto.digit;
     }
 }
 

@@ -16,7 +16,7 @@ describe('PositionIdentifierWrapper', () => {
         positionIdentifier.digit = 1;
         subject = new PositionIdentifierWrapper(positionIdentifier);
 
-        const digit: number = subject.getDigit();
+        const digit: number = subject.digit;
 
         expect(digit).toEqual(positionIdentifier.digit);
     });

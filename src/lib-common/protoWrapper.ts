@@ -4,7 +4,7 @@
  */
 abstract class ProtoWrapper <Proto> {
     // Returns the underlying proto for the wrapper.
-    public abstract getProto(): Proto;
+    public abstract get proto(): Proto;
 }
 
 export { ProtoWrapper };
