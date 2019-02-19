@@ -1,6 +1,6 @@
+import { ProtoWrapper } from "../lib-common/protoWrapper";
 import { document } from "../lib-proto/document";
 import IPositionIdentifier = document.data.IPositionIdentifier;
-import { ProtoWrapper } from "../lib-common/protoWrapper";
 
 class PositionIdentifierWrapper extends ProtoWrapper<IPositionIdentifier> {
     private _proto: IPositionIdentifier;
