@@ -1,8 +1,8 @@
-import { PositionIdentifierWrapper } from "../../lib-crdt/PositionIdentifierWrapper";
+import { PositionIdentifierWrapper } from "../../lib-crdt/positionIdentifierWrapper";
 import { document } from "../../lib-proto/document";
 import PositionIdentifier = document.data.PositionIdentifier;
 
-describe('PositionIdentifierWrapper', () => {
+describe("PositionIdentifierWrapper", () => {
     let positionIdentifier: PositionIdentifier;
     let subject: PositionIdentifierWrapper;
 
@@ -12,7 +12,7 @@ describe('PositionIdentifierWrapper', () => {
 
     // This is just a simple test to make sure Jest is working.
     // TODO: Remove this test once we have real logic.
-    test('should return digit', () => {
+    test("should return digit", () => {
         positionIdentifier.digit = 1;
         subject = new PositionIdentifierWrapper(positionIdentifier);
 

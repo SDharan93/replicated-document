@@ -1,7 +1,7 @@
-import { document } from "../lib-proto/document";
-import IReplicaCharacter = document.data.IReplicaCharacter;
-import { PositionIdentifierWrapper } from "./PositionIdentifierWrapper";
 import { ProtoWrapper } from "../lib-common/protoWrapper";
+import { document } from "../lib-proto/document";
+import { PositionIdentifierWrapper } from "./positionIdentifierWrapper";
+import IReplicaCharacter = document.data.IReplicaCharacter;
 
 class ReplicaCharacterWrapper extends ProtoWrapper<IReplicaCharacter> {
     private _proto: IReplicaCharacter;
@@ -10,7 +10,7 @@ class ReplicaCharacterWrapper extends ProtoWrapper<IReplicaCharacter> {
     public constructor(proto: IReplicaCharacter) {
         super();
         this._proto = proto;
-        for (let positionIdentifier of proto.positions) {
+        for (const positionIdentifier of proto.positions) {
             this._positionIdentifiers.push(new PositionIdentifierWrapper(positionIdentifier));
         }
     }
