@@ -16,6 +16,9 @@
     "build-document-proto": "pbjs -t static-module ./protos/document/**/*.proto -o ./src/lib-proto/document.js && pbts -o ./src/lib-proto/document.d.ts ./src/lib-proto/document.js",
     "build-proto": "mkdir -p ./src/lib-proto && npm run build-client-proto && npm run build-document-proto",
     "build-ts": "tsc",
+    "clean": "npm run clean-proto && npm run clean-dist",
+    "clean-dist": "rm -rf ./dist",
+    "clean-proto": "rm -rf ./src/lib-proto",
     "test": "jest",
     "tslint": "tslint -c tslint.json -p tsconfig.json"
   }
