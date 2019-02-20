@@ -3,9 +3,12 @@ import { document } from "../lib-proto/document";
 import { PositionIdentifierWrapper } from "./positionIdentifierWrapper";
 import IReplicaCharacter = document.data.IReplicaCharacter;
 
+/**
+ * Wrapper for the ReplicaCharacter proto.
+ */
 class ReplicaCharacterWrapper extends ProtoWrapper<IReplicaCharacter> {
-    private _proto: IReplicaCharacter;
-    private _positionIdentifiers: PositionIdentifierWrapper[];
+    private readonly _proto: IReplicaCharacter;
+    private readonly _positionIdentifiers: PositionIdentifierWrapper[];
 
     public constructor(proto: IReplicaCharacter) {
         super();
