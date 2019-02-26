@@ -4,6 +4,7 @@
     "comment-format": [true, "check-uppercase", {"ignore-words": ["TODO", "HACK"]}],
     "curly": true,
     "eofline": true,
+    "experimentalDecorators": true,
     "file-name-casing": [true, "camel-case"],
     "indent": [true, "spaces", 4],
     "interface-name": [true, "always-prefix"],

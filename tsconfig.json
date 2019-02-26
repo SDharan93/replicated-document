@@ -11,7 +11,9 @@
       "noUnusedLocals": true,
       "noUnusedParameters": true,
       "allowJs": true,
-      "outDir": "dist/"
+      "outDir": "dist/",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
   },
   "include": [
       "src/**/*"

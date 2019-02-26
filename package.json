@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
+    "@nestjs/common": "^5.7.3",
+    "@nestjs/core": "^5.7.3",
     "@types/jest": "^24.0.6",
     "jest": "^24.1.0",
     "protobufjs": "^6.8.8",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.4.0",
     "ts-jest": "^24.0.0",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"
