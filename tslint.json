@@ -1,7 +1,11 @@
 {
+  "linterOptions": {
+    "exclude": [
+        "node_modules/**"
+    ]
+},
   "rules": {
     "class-name": true,
-    "comment-format": [true, "check-uppercase", {"ignore-words": ["TODO", "HACK"]}],
     "curly": true,
     "eofline": true,
     "file-name-casing": [true, "camel-case"],
@@ -30,7 +34,7 @@
     "no-consecutive-blank-lines": true,
     "no-duplicate-imports": true,
     "no-internal-module": true,
-    "no-magic-numbers": true,
+    "no-magic-numbers": false,
     "no-non-null-assertion": true,
     "no-null-keyword": true,
     "no-trailing-whitespace": true,

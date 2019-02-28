@@ -10,14 +10,8 @@ package document.data;
 message Document {
     // A unique identifier for the document.
     string document_id = 1;
-    // A representation of all lines within the document.
-    repeated DocumentLine lines = 2;
-}
-
-// A representation of a line in a document.
-message DocumentLine {
-    // All characters within the line.
-    repeated ReplicaCharacter characters = 1;
+    // All characters within the document.
+    repeated ReplicaCharacter characters = 2;
 }
 
 // A representation of the characters stored within the collaborative document.
