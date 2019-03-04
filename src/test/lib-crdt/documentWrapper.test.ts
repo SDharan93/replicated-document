@@ -43,6 +43,7 @@ describe("DocumentWrapper", () => {
     describe("deleteCharacter", () => {
         beforeEach(() => {
             document = Document.create({
+                documentId: "1",
                 characters: characters
             });
         });
@@ -115,6 +116,7 @@ describe("DocumentWrapper", () => {
     describe("insertCharacter", () => {
         beforeEach(() => {
             document = Document.create({
+                documentId: "1",
                 characters: characters
             });
         });
@@ -163,6 +165,20 @@ describe("DocumentWrapper", () => {
             expect(success).toEqual(true);
             expect(subject.replicaCharacters).toHaveLength(characters.length + 1);
             expect(subject.replicaCharacters[4]).toEqual(insertCharacter);
+        });
+
+        test("should not insert duplicate character", () => {
+            const insertCharacter: ReplicaCharacterWrapper = new ReplicaCharacterWrapper(ReplicaCharacter.create({
+                positions: [
+                    PositionIdentifier.create({digit: 3, siteId: "b67d409a"})
+                ]
+            }));
+            subject = new DocumentWrapper(document);
+
+            const success: boolean = subject.insertCharacter(insertCharacter);
+
+            expect(success).toEqual(true);
+            expect(subject.replicaCharacters).toHaveLength(characters.length);
         });
     });
 });

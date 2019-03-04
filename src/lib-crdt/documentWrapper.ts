@@ -1,3 +1,5 @@
+import { Logger } from "winston";
+import { Log } from "../lib-common/log";
 import { ProtoWrapper } from "../lib-common/protoWrapper";
 import { document } from "../lib-proto/document";
 import IDocument = document.data.IDocument;
@@ -7,6 +9,8 @@ import { ReplicaCharacterWrapper } from "./replicaCharacterWrapper";
  * Wrapper for the Document proto.
  */
 class DocumentWrapper extends ProtoWrapper<IDocument> {
+    private readonly log: Logger = new Log(__filename).logger;
+
     private readonly _proto: IDocument;
     private readonly _replicaCharacters: ReplicaCharacterWrapper[];
 
@@ -36,7 +40,7 @@ class DocumentWrapper extends ProtoWrapper<IDocument> {
      * Insets a character into the document.
      * @param {ReplicaCharacterWrapper} character the character to be inserted.
      * @param {number} [startingIndex=0] The starting position of the document insertion.
-     * @param {never} [endingIndex=document length] The ending position of the document insertion.
+     * @param {number} [endingIndex=document length] The ending position of the document insertion.
      */
     public insertCharacter(character: ReplicaCharacterWrapper,
         startingIndex?: number, endingIndex?: number): boolean {
@@ -58,7 +62,8 @@ class DocumentWrapper extends ProtoWrapper<IDocument> {
         // If we find an exact match of the character we are attempting to insert, we have likely already inserted it
         // into the document.
         if (character.compare(this._replicaCharacters[mid]) === 0) {
-            // TODO: Add logging for this scenario.
+            this.log.info(
+                `Already inserted character ${character.toString()} into document ${this.documentId}`);
             return true;
         }
 
@@ -116,7 +121,8 @@ class DocumentWrapper extends ProtoWrapper<IDocument> {
         // If the parameters of the search is out of bounds of the document, the character likely has been already
         // deleted from the document.
         if (start < 0 || end > this._replicaCharacters.length || start > end) {
-            // TODO: Add logging for this scenario.
+            this.log.info(
+                `Already deleted character ${character.toString()} from document ${this.documentId}`);
             return -1;
         }
 

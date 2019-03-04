@@ -1,3 +1,4 @@
+import * as underscore from "underscore";
 import { ProtoWrapper } from "../lib-common/protoWrapper";
 import { document } from "../lib-proto/document";
 import { PositionIdentifierWrapper } from "./positionIdentifierWrapper";
@@ -34,6 +35,14 @@ class ReplicaCharacterWrapper extends ProtoWrapper<IReplicaCharacter> {
 
     public get positionIdentifiers(): PositionIdentifierWrapper[] {
         return this._positionIdentifiers;
+    }
+
+    public toString(): string {
+        const positions: string = underscore.map(this.positionIdentifiers, (position: PositionIdentifierWrapper) => {
+            return position.toString();
+        }).join(",");
+
+        return `value: ${this.value}, position: [${positions}]`;
     }
 
     /**

@@ -24,6 +24,10 @@ class PositionIdentifierWrapper extends ProtoWrapper<IPositionIdentifier> {
     public get digit(): number {
         return this._proto.digit;
     }
+
+    public toString(): string {
+        return `siteId: ${this.siteId}, digit: ${this.digit}`;
+    }
 }
 
 export { PositionIdentifierWrapper };
