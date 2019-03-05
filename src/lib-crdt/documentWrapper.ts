@@ -1,15 +1,14 @@
-import { Logger } from "winston";
 import { Log } from "../lib-common/log";
 import { ProtoWrapper } from "../lib-common/protoWrapper";
 import { document } from "../lib-proto/document";
-import IDocument = document.data.IDocument;
 import { ReplicaCharacterWrapper } from "./replicaCharacterWrapper";
+import IDocument = document.data.IDocument;
 
 /**
  * Wrapper for the Document proto.
  */
 class DocumentWrapper extends ProtoWrapper<IDocument> {
-    private readonly log: Logger = new Log(__filename).logger;
+    private readonly log: Log = new Log(__filename);
 
     private readonly _proto: IDocument;
     private readonly _replicaCharacters: ReplicaCharacterWrapper[];
