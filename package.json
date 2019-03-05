@@ -2,7 +2,11 @@
   "name": "replicated-document",
   "version": "1.0.0",
   "dependencies": {
+    "@nestjs/common": "^5.7.3",
+    "@nestjs/core": "^5.7.3",
     "@types/underscore": "^1.8.12",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.4.0",
     "underscore": "^1.9.1",
     "winston": "^3.2.1"
   },
