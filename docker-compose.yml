@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./tmp/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: kanto
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+  api:
+    build: .
+    command: ./dist/api/main.js
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
