@@ -6,9 +6,9 @@ import { DocumentEntity } from "../entity/document.entity";
 @Injectable()
 export class DocumentService {
     public constructor(
-        @InjectRepository(DocumentEntity)
-        private readonly documentRepository: Repository<DocumentEntity>,
-    ) {}
+        @InjectRepository(DocumentEntity) private readonly documentRepository: Repository<DocumentEntity>) {
+
+    }
 
     public async findAll(): Promise<DocumentEntity[]> {
         return await this.documentRepository.find();

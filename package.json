@@ -24,16 +24,19 @@
     "typescript": "^3.2.4"
   },
   "scripts": {
-    "build": "npm run build-proto && npm run build-ts && npm run tslint && npm run test",
+    "build": "npm run build-proto && npm run tslint && npm run test && npm run compile-ts && npm run build-client-app",
+    "build-client-app": "cd src/client && npm run build",
     "build-client-proto": "pbjs -t static-module ./protos/client/**/*.proto -o ./src/lib-proto/client.js && pbts -o ./src/lib-proto/client.d.ts ./src/lib-proto/client.js",
     "build-document-proto": "pbjs -t static-module ./protos/document/**/*.proto -o ./src/lib-proto/document.js && pbts -o ./src/lib-proto/document.d.ts ./src/lib-proto/document.js",
     "build-proto": "mkdir -p ./src/lib-proto && npm run build-client-proto && npm run build-document-proto",
-    "build-ts": "tsc",
+    "compile-ts": "tsc",
     "clean": "npm run clean-proto && npm run clean-dist",
     "clean-dist": "rm -rf ./dist",
     "clean-proto": "rm -rf ./src/lib-proto",
-    "run-api": "node ./dist/api/main",
+    "start": "node ./dist/api/main",
     "test": "jest",
-    "tslint": "tslint -c tslint.json -p tsconfig.json"
+    "tslint": "npm run tslint-api && npm run tslint-client",
+    "tslint-api": "tslint -c tslint.json -p tsconfig.json",
+    "tslint-client": "tslint -c tslint.json -p ./src/client/tsconfig.json"
   }
 }
