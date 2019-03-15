@@ -7,6 +7,7 @@ async function bootstrap(): Promise<void> {
     const app: INestApplication & INestExpressApplication = await NestFactory.create(ApplicationModule);
 
     app.useStaticAssets(join(__dirname, "../", "client/"));
+    app.setGlobalPrefix("api");
 
     await app.listen(5000);
 }

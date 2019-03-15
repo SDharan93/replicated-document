@@ -1,5 +1,5 @@
 import { Controller, Get } from "@nestjs/common";
-import { DocumentService } from "../../lib-document/service/document.service";
+import { DocumentService } from "../service/document.service";
 
 /**
  * This controller is responsible for handling all traffic that is pointing to the document endpoints.

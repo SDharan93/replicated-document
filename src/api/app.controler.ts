@@ -5,7 +5,7 @@ import { Controller, Get, Render } from "@nestjs/common";
  * only handler a GET request to the "/" endpoint.
  */
 @Controller()
-export class RootController {
+export class AppController {
     public constructor() {
     }
 

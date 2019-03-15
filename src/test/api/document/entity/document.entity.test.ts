@@ -1,6 +1,6 @@
-import { DocumentWrapper } from "../../../lib-crdt/documentWrapper";
-import { DocumentEntity } from "../../../lib-document/entity/document.entity";
-import { document } from "../../../lib-proto/document";
+import { DocumentWrapper } from "../../../../lib-crdt/documentWrapper";
+import { DocumentEntity } from "../../../../api/document/entity/document.entity";
+import { document } from "../../../../lib-proto/document";
 import Document = document.data.Document;
 import PositionIdentifier = document.data.PositionIdentifier;
 import ReplicaCharacter = document.data.ReplicaCharacter;

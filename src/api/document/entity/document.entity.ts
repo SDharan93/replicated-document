@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { Log } from "../../lib-common/log";
-import { DocumentWrapper } from "../../lib-crdt/documentWrapper";
-import { document } from "../../lib-proto/document";
+import { Log } from "../../../lib-common/log";
+import { DocumentWrapper } from "../../../lib-crdt/documentWrapper";
+import { document } from "../../../lib-proto/document";
 import Document = document.data.Document;
 
 @Entity()
