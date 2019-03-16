@@ -9,7 +9,8 @@ async function bootstrap(): Promise<void> {
     app.useStaticAssets(join(__dirname, "../", "client/"));
     app.setGlobalPrefix("api");
 
-    await app.listen(5000);
+    const port: string = process.env.PORT || "5000";
+    await app.listen(port);
 }
 
 bootstrap();

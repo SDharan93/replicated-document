@@ -1,17 +1,16 @@
 version: '3'
 services:
   db:
-    image: mysql:5
+    image: postgres
     restart: always
     ports:
-      - "3306:3306"
+      - "5432:5432"
     volumes:
-      - ./tmp/db:/var/lib/mysql
+      - ./tmp/db:/var/lib/postgresql/data
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: kanto
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      POSTGRES_DB: kanto
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
 
   api:
     build: .

@@ -4,7 +4,7 @@ import { DocumentWrapper } from "../../../lib-crdt/documentWrapper";
 import { document } from "../../../lib-proto/document";
 import Document = document.data.Document;
 
-@Entity()
+@Entity({name: "document"})
 export class DocumentEntity {
     private readonly log: Log = new Log(__filename);
 
