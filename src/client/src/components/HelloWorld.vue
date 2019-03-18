@@ -25,6 +25,11 @@ export default class HelloWorld extends Vue {
           element: document.getElementById('content') || undefined,
           placeholder: "type on me!",
           promptURLs: true,
+          renderingConfig: {
+              markedOptions: {
+                  sanitize: true
+              }
+          },
           spellChecker: true,
           toolbar: false,
           toolbarTips: false
