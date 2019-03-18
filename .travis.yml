@@ -5,7 +5,7 @@ node_js:
 
 before_install:
   - npm i -g
-  - cd src/client && npm i -g
+  - cd src/client && npm i -g && cd ../../
 
 cache: npm
 
