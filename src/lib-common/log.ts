@@ -1,17 +1,16 @@
+import * as Logger from "bunyan";
+
 /**
  * Used as a common logging wrapper to create an easy integration for all files. By creating a common logger class
  * we can swap out the transports and underlying logger classes without effecting the other classes.
  */
-import { createLogger } from "bunyan";
-import Logger = require("bunyan");
-
 class Log {
     private readonly _logger: Logger;
 
     // filename is passed in so it can be referenced in all the logs.
     public constructor(className: string) {
 
-        this._logger = createLogger({
+        this._logger = Logger.createLogger({
             name: className,
             stream: process.stdout,
             level: Logger.DEBUG
