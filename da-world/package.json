@@ -1,0 +1,30 @@
+{
+  "name": "root",
+  "private": true,
+  "version": "0.1.0",
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.3",
+    "babel-jest": "^24.5.0",
+    "jest": "^24.5.0",
+    "lerna": "^3.13.1",
+    "protobufjs": "^6.8.8",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "@types/underscore": "^1.8.13",
+    "dotenv": "^7.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.4.0",
+    "underscore": "^1.9.1"
+  },
+  "scripts": {
+    "build": "npm run build-proto && lerna bootstrap && lerna run build",
+    "build-client-proto": "pbjs -t static-module ../protos/client/**/*.proto -o ./packages/lib-common/src/protos/client.js && pbts -o ./packages/lib-common/src/protos/client.d.ts ./packages/lib-common/src/protos/client.js",
+    "build-document-proto": "pbjs -t static-module ../protos/document/**/*.proto -o ./packages/lib-common/src/protos/document.js && pbts -o ./packages/lib-common/src/protos/document.d.ts ./packages/lib-common/src/protos/document.js",
+    "build-proto": "mkdir -p ./packages/lib-common/src/protos && npm run build-client-proto && npm run build-document-proto",
+    "clean": "lerna run clean"
+  }
+}

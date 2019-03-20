@@ -1,0 +1,40 @@
+{
+  "name": "@replicated-doc/api",
+  "private": true,
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "shane.dharan <shanedharan@gmail.com>",
+  "homepage": "https://github.com/SDharan93/replicated-document#readme",
+  "license": "ISC",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SDharan93/replicated-document.git"
+  },
+  "scripts": {
+    "build": "npm run tsc && npm run tslint && npm run test",
+    "clean": "rm -rf dist/",
+    "start": "node ./dist/main",
+    "test": "jest",
+    "tsc": "tsc",
+    "tslint": "tslint -c ../../tslint.json -p tsconfig.json"
+  },
+  "bugs": {
+    "url": "https://github.com/SDharan93/replicated-document/issues"
+  },
+  "dependencies": {
+    "@replicated-doc/lib-common": "^0.1.0",
+    "@replicated-doc/client": "^0.1.0",
+    "@nestjs/common": "^5.7.3",
+    "@nestjs/core": "^5.7.3",
+    "@nestjs/typeorm": "^5.3.0",
+    "pg": "^7.9.0",
+    "typeorm": "^0.2.14"
+  }
+}

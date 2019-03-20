@@ -1,0 +1,54 @@
+{
+  "name": "@replicated-doc/client",
+  "private": true,
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "shane.dharan <shanedharan@gmail.com>",
+  "homepage": "https://github.com/SDharan93/replicated-document#readme",
+  "license": "ISC",
+  "dependencies": {
+    "@replicated-doc/lib-common": "^0.1.0",
+    "@types/simplemde": "^1.11.7",
+    "simplemde": "^1.11.2",
+    "vue": "^2.6.6",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.5.5",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-typescript": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.1.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "typescript": "^3.2.1",
+    "vue-cli-plugin-vuetify": "^0.5.0",
+    "vue-template-compiler": "^2.5.21",
+    "vuetify-loader": "^1.0.5"
+  },
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SDharan93/replicated-document.git"
+  },
+  "scripts": {
+    "clean": "rm -rf dist/",
+    "serve": "vue-cli-service serve",
+    "build": "npm run tsc && npm run tslint && vue-cli-service build --mode production --target app --modern",
+    "tsc": "tsc",
+    "tslint": "tslint -c ../../tslint.json -p tsconfig.json"
+  },
+  "bugs": {
+    "url": "https://github.com/SDharan93/replicated-document/issues"
+  }
+}

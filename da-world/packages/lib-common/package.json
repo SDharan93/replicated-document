@@ -1,0 +1,34 @@
+{
+  "name": "@replicated-doc/lib-common",
+  "private": true,
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "shane.dharan <shanedharan@gmail.com>",
+  "homepage": "https://github.com/SDharan93/replicated-document#readme",
+  "license": "ISC",
+  "directories": {
+    "src": "src",
+    "test": "test"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SDharan93/replicated-document.git"
+  },
+  "scripts": {
+    "build": "npm run tsc && npm run tslint && npm run test",
+    "clean": "rm -rf dist/",
+    "tsc": "tsc",
+    "tslint": "tslint -c ../../tslint.json -p tsconfig.json",
+    "test": "jest"
+  },
+  "bugs": {
+    "url": "https://github.com/SDharan93/replicated-document/issues"
+  },
+  "dependencies": {
+    "@types/bunyan": "^1.8.6",
+    "bunyan": "^1.8.12"
+  }
+}

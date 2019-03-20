@@ -4,8 +4,7 @@ node_js:
   - "10"
 
 before_install:
-  - npm i -g
-  - cd src/client && npm i -g && cd ../../
+  - cd da-world && npm i -g
 
 cache: npm
 
