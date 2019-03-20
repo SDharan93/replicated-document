@@ -1,0 +1,12 @@
+{
+  "name": "replicated-document",
+  "version": "0.1.0",
+  "scripts": {
+    "postinstall": "cd da-world && npm i && npm run build",
+    "start": "cd da-world/packages/api && node ./dist/main"
+  },
+  "engines": {
+    "node": "10.15.0",
+    "npm": "6.7.0"
+  }
+}
