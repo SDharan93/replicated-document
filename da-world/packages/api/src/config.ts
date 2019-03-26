@@ -28,6 +28,14 @@ class Config {
             synchronize: synchronize
         };
     }
+
+    /**
+     * Checks whether CORS should be enabled.
+     */
+    public isCorsEnabled(): boolean {
+        // Only enable CORS in development.
+        return (process.env.NODE_ENV === "development");
+    }
 }
 
 export { Config };

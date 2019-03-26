@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "npm run tsc && npm run tslint && npm run test",
-    "clean": "rm -rf dist/",
+    "clean": "rm -rf dist/ && rm -rf src/protos",
     "tsc": "tsc",
     "tslint": "tslint -c ../../tslint.json -p tsconfig.json",
     "test": "jest"

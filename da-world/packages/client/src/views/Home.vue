@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <HelloWorld/>
+    <RealTimeDocument/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import RealTimeDocument from '@/components/RealTimeDocument.vue';
 
 @Component({
   components: {
-    HelloWorld,
+      RealTimeDocument,
   },
 })
 export default class Home extends Vue {}

@@ -10,12 +10,13 @@
 </template>
 
 <script lang="ts">
+import { DocumentService } from "@/services/documentService";
 import SimpleMDE from "simplemde";
 import { Component, Vue } from 'vue-property-decorator';
 import 'simplemde/dist/simplemde.min.css'
 
 @Component
-export default class HelloWorld extends Vue {
+export default class RealTimeDocument extends Vue {
   private editor?: SimpleMDE;
 
   mounted(): void {
@@ -40,6 +41,9 @@ export default class HelloWorld extends Vue {
       if (this.editor) {
           console.log(this.editor.value());
       }
+
+      const documentService: DocumentService = new DocumentService();
+      documentService.getDocumentData();
   }
 }
 </script>
