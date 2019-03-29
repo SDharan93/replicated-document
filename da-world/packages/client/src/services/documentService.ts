@@ -8,8 +8,8 @@ export class DocumentService {
         this._connection = Api.getConnection();
     }
 
-    public async getDocumentData(): Promise<void> {
+    public async getDocumentData(): Promise<string>{
         const data: AxiosResponse<string> = await this._connection.get("/api/document");
-        console.log(`data is ${data.data}`);
+        return data.data;
     }
 }

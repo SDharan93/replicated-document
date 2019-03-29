@@ -10,7 +10,6 @@
 </template>
 
 <script lang="ts">
-import { DocumentService } from "@/services/documentService";
 import SimpleMDE from "simplemde";
 import { Component, Vue } from 'vue-property-decorator';
 import 'simplemde/dist/simplemde.min.css'
@@ -35,15 +34,14 @@ export default class RealTimeDocument extends Vue {
       });
 
       this.editor = editor;
+      this.$store.commit("documentModule/setEditor", editor);
   }
 
   getContent(): void {
       if (this.editor) {
           console.log(this.editor.value());
       }
-
-      const documentService: DocumentService = new DocumentService();
-      documentService.getDocumentData();
+      this.$store.dispatch("documentModule/fetchData", null, {root: true});
   }
 }
 </script>
